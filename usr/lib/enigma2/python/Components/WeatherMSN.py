@@ -20,7 +20,7 @@
 # you have to keep MY license and inform me about the modifications by mail.
 #
 
-from enigma import eEnv, eTimer
+from enigma import eTimer
 from Plugins.Extensions.WeatherPlugin2.MSNWeather import MSNWeather
 
 class WeatherMSN:

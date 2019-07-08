@@ -23,7 +23,7 @@
 from Renderer import Renderer
 from enigma import ePixmap
 from Components.AVSwitch import AVSwitch
-from enigma import eEnv, ePicLoad, eRect, eSize, gPixmapPtr
+from enigma import ePicLoad, eRect, eSize, gPixmapPtr
 
 class MSNWeatherPixmap(Renderer):
 	def __init__(self):
