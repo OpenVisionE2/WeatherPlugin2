@@ -2,4 +2,6 @@ WeatherPlugin2 [![Build Status](https://travis-ci.org/OpenVisionE2/WeatherPlugin
 ==============
 Needed for https://github.com/OpenVisionE2/RAED-Mod-Skins
 
-Coded by Dr.Best modified by RAED
+Coded by Dr.Best
+
+Modified by RAED for Open Vision
