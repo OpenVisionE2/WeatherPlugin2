@@ -100,11 +100,11 @@ class MSNWeatherPluginEntriesListConfigScreen(Screen):
 		self["key_yellow"] = StaticText(_("Edit"))
 		self["key_blue"] = StaticText(_("Delete"))
 		self["entrylist"] = WeatherPluginEntryList([])
-		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions"],
 			{
-			 "ok"	:	self.keyOK,
-			 "back"	:	self.keyClose,
-			 "red"	:	self.keyClose,
+			 "ok":	self.keyOK,
+			 "back":	self.keyClose,
+			 "red":	self.keyClose,
 			 "green":	self.keyGreen,			 
 			 "yellow":	self.keyYellow,
 			 "blue": 	self.keyDelete,
@@ -118,7 +118,7 @@ class MSNWeatherPluginEntriesListConfigScreen(Screen):
 		self.close(-1, None)
 
 	def keyGreen(self):
-		self.session.openWithCallback(self.updateList,MSNWeatherPluginEntryConfigScreen,None)
+		self.session.openWithCallback(self.updateList, MSNWeatherPluginEntryConfigScreen, None)
 
 	def keyOK(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
@@ -130,7 +130,7 @@ class MSNWeatherPluginEntriesListConfigScreen(Screen):
 		except: sel = None
 		if sel is None:
 			return
-		self.session.openWithCallback(self.updateList,MSNWeatherPluginEntryConfigScreen,sel)
+		self.session.openWithCallback(self.updateList, MSNWeatherPluginEntryConfigScreen, sel)
 
 	def keyDelete(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
@@ -254,7 +254,7 @@ class MSNWeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 		
 	def searchLocation(self):
 		if self.current.city.value != "":
-			language = config.osd.language.value.replace("_","-")
+			language = config.osd.language.value.replace("_", "-")
 			if language == "en-EN": # hack
 				language = "en-US"
 			elif language == "no-NO": # hack
@@ -393,11 +393,11 @@ class MSNWeatherPluginSearch(Screen):
 		self["key_red"] = StaticText(_("Back"))
 		self["key_green"] = StaticText(_("OK"))		
 		self["entrylist"] = MSNWeatherPluginSearchResultList([])
-		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions"],
 			{
-			 "ok"	:	self.keyOK,
+			 "ok":	self.keyOK,
 			 "green": self.keyOK,
-			 "back"	:	self.keyClose,
+			 "back":	self.keyClose,
 			 "red": self.keyClose,
 			 }, -1)
 		self.updateList(xmlstring)
