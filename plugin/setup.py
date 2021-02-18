@@ -44,9 +44,9 @@ skinwidth = getDesktop(0).size().width()
 
 def initWeatherPluginEntryConfig():
 	s = ConfigSubsection()
-	s.city = ConfigText(default = "Heidelberg", visible_width = 100, fixed_size = False)
-	s.degreetype = ConfigSelection(choices = [("C", _("metric system")), ("F", _("imperial system"))], default = "C")
-	s.weatherlocationcode = ConfigText(default = "", visible_width = 100, fixed_size = False)
+	s.city = ConfigText(default="Heidelberg", visible_width=100, fixed_size=False)
+	s.degreetype = ConfigSelection(choices=[("C", _("metric system")), ("F", _("imperial system"))], default="C")
+	s.weatherlocationcode = ConfigText(default="", visible_width=100, fixed_size=False)
 	config.plugins.WeatherPlugin2.Entry.append(s)
 	return s
 
@@ -158,7 +158,7 @@ class MSNWeatherPluginEntriesListConfigScreen(Screen):
 		self.updateList()
 
 class WeatherPluginEntryList(MenuList):
-	def __init__(self, list, enableWrapAround = True):
+	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
 		      self.l.setFont(0, gFont("Regular", 20))
@@ -320,7 +320,7 @@ class MSNWeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 			else:
 				self.session.openWithCallback(self.searchCallback, MSNWeatherPluginSearch, xmlstring)
 			
-	def error(self, error = None):
+	def error(self, error=None):
 		if error is not None:
 			print(error)
 		
@@ -330,7 +330,7 @@ class MSNWeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 			self.current.city.value = result[1]
 
 class MSNWeatherPluginEntryConfigScreen2(MenuList):
-	def __init__(self, list, enableWrapAround = True):
+	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
 		      self.l.setFont(0, gFont("Regular", 20))
@@ -424,7 +424,7 @@ class MSNWeatherPluginSearch(Screen):
 		
 
 class MSNWeatherPluginSearchResultList(MenuList):
-	def __init__(self, list, enableWrapAround = True):
+	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
 		      self.l.setFont(0, gFont("Regular", 20))
