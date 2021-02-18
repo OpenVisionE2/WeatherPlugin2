@@ -51,7 +51,7 @@ config.plugins.WeatherPlugin2.Entry = ConfigSubList()
 initConfig()
 
 
-def main(session,**kwargs):
+def main(session, **kwargs):
 	session.open(MSNWeatherPlugin)
 
 def Plugins(**kwargs):
