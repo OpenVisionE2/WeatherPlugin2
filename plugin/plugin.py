@@ -46,7 +46,7 @@ except:
 	WeatherMSNComp = None
 
 config.plugins.WeatherPlugin2 = ConfigSubsection()
-config.plugins.WeatherPlugin2.entrycount =  ConfigInteger(0)
+config.plugins.WeatherPlugin2.entrycount = ConfigInteger(0)
 config.plugins.WeatherPlugin2.Entry = ConfigSubList()
 initConfig()
 
@@ -146,7 +146,7 @@ class MSNWeatherPlugin(Screen):
 		i = 1
 		while i <= 5:
 			self["weekday%s" % i] = StaticText()
-			self["weekday%s_icon" %i] = WeatherIcon()
+			self["weekday%s_icon" % i] = WeatherIcon()
 			self["weekday%s_temp" % i] = StaticText()
 			i += 1
 		del i
@@ -199,7 +199,7 @@ class MSNWeatherPlugin(Screen):
 			self.setItem()
 
 	def setItem(self):
-		self.weatherPluginEntry = config.plugins.WeatherPlugin2.Entry[self.weatherPluginEntryIndex-1]
+		self.weatherPluginEntry = config.plugins.WeatherPlugin2.Entry[self.weatherPluginEntryIndex - 1]
 		self.clearFields()
 		self.startRun()
 
@@ -217,7 +217,7 @@ class MSNWeatherPlugin(Screen):
 		i = 1
 		while i <= 5:
 			self["weekday%s" % i].text = ""
-			self["weekday%s_icon" %i].hide()
+			self["weekday%s_icon" % i].hide()
 			self["weekday%s_temp" % i].text = ""
 			i += 1
 
@@ -243,10 +243,10 @@ class MSNWeatherPlugin(Screen):
 					self["condition"].text = item.skytext
 					self["humidity"].text = _("Humidity: %s %%") % item.humidity
 					self["wind_condition"].text = item.winddisplay
-					c =  time.strptime(item.observationtime, "%H:%M:%S")
-					self["observationtime"].text = _("Observation time: %s") %  time.strftime("%H:%M", c)
+					c = time.strptime(item.observationtime, "%H:%M:%S")
+					self["observationtime"].text = _("Observation time: %s") % time.strftime("%H:%M", c)
 					self["observationpoint"].text = _("Observation point: %s") % item.observationpoint
-					self["feelsliketemp"].text = _("Feels like %s") % item.feelslike + "°" +  self.weatherData.degreetype
+					self["feelsliketemp"].text = _("Feels like %s") % item.feelslike + "°" + self.weatherData.degreetype
 				else:
 					index = weatherData[0]
 					c = time.strptime(item.date, "%Y-%m-%d")
