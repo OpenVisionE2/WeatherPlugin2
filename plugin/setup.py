@@ -63,7 +63,7 @@ def initConfig():
 
 class MSNWeatherPluginEntriesListConfigScreen(Screen):
 	if skinwidth == 1280:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginEntriesListConfigScreen" position="center,center" size="550,400">
 			<widget render="Label" source="city" position="5,60" size="400,50" font="Regular;20" halign="left"/>
 			<widget render="Label" source="degreetype" position="410,60" size="130,50" font="Regular;20" halign="left"/>
@@ -78,7 +78,7 @@ class MSNWeatherPluginEntriesListConfigScreen(Screen):
 			<ePixmap position="420,10" zPosition="4" size="140,40" pixmap="buttons/blue.png" transparent="1" alphatest="on" />
 		</screen>"""
 	else:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginEntriesListConfigScreen" position="center,center" size="811,508">
 			<widget render="Label" source="city" position="5,70" size="400,50" font="Regular;35"/>
 			<widget render="Label" source="degreetype" position="405,70" size="360,50" font="Regular;35"/>
@@ -165,18 +165,18 @@ class WeatherPluginEntryList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
-		      self.l.setFont(0, gFont("Regular", 20))
-		      self.l.setFont(1, gFont("Regular", 18))
+			self.l.setFont(0, gFont("Regular", 20))
+			self.l.setFont(1, gFont("Regular", 18))
 		else:
-		      self.l.setFont(0, gFont("Regular", 28))
-		      self.l.setFont(1, gFont("Regular", 28))
+			self.l.setFont(0, gFont("Regular", 28))
+			self.l.setFont(1, gFont("Regular", 28))
 
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
 		if skinwidth == 1280:
-		     instance.setItemHeight(25)
+			instance.setItemHeight(25)
 		else:
-		     instance.setItemHeight(32)
+			instance.setItemHeight(32)
 
 	def getCurrentIndex(self):
 		return self.instance.getCurrentIndex()
@@ -184,19 +184,19 @@ class WeatherPluginEntryList(MenuList):
 	def buildList(self):
 		list = []
 		for c in config.plugins.WeatherPlugin2.Entry:
-		    if skinwidth == 1280:
-			res = [
-				c,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
-				(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
-			]
-		    else:
-			res = [
-				c,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
-				(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
-			]
-		    list.append(res)
+			if skinwidth == 1280:
+				res = [
+					c,
+					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
+					(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
+				]
+			else:
+				res = [
+					c,
+					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
+					(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
+				]
+			list.append(res)
 		self.list = list
 		self.l.setList(list)
 		self.moveToIndex(0)
@@ -204,7 +204,7 @@ class WeatherPluginEntryList(MenuList):
 
 class MSNWeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 	if skinwidth == 1280:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginEntryConfigScreen" position="center,center" size="550,400">
 			<widget name="config" position="20,60" size="520,300" scrollbarMode="showOnDemand" />
 			<ePixmap position="0,10" zPosition="4" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
@@ -217,7 +217,7 @@ class MSNWeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 			<widget source="key_blue" render="Label" position="420,10" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
 	else:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginEntryConfigScreen" position="center,center" size="811,534">
 			<widget name="config" position="8,75" size="794,450" scrollbarMode="showOnDemand"/>
 			<ePixmap position="30,10" zPosition="4" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on"/>
@@ -339,18 +339,18 @@ class MSNWeatherPluginEntryConfigScreen2(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
-		      self.l.setFont(0, gFont("Regular", 20))
-		      self.l.setFont(1, gFont("Regular", 18))
+			self.l.setFont(0, gFont("Regular", 20))
+			self.l.setFont(1, gFont("Regular", 18))
 		else:
-		      self.l.setFont(0, gFont("Regular", 28))
-		      self.l.setFont(1, gFont("Regular", 26))
+			self.l.setFont(0, gFont("Regular", 28))
+			self.l.setFont(1, gFont("Regular", 26))
 
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
 		if skinwidth == 1280:
-		     instance.setItemHeight(44)
+			instance.setItemHeight(44)
 		else:
-		     instance.setItemHeight(55)
+			instance.setItemHeight(55)
 
 	def getCurrentIndex(self):
 		return self.instance.getCurrentIndex()
@@ -358,18 +358,18 @@ class MSNWeatherPluginEntryConfigScreen2(MenuList):
 	def buildList(self):
 		list = []
 		for c in config.plugins.WeatherPlugin2.Entry:
-		    if skinwidth == 1280:
-			res = [
-				c,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
-				(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
-			]
-		    else:
-			res = [
-				c,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
-				(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
-			]
+			if skinwidth == 1280:
+				res = [
+					c,
+					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
+					(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
+				]
+			else:
+				res = [
+					c,
+					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 400, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.city.value)),
+					(eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 80, 32, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.degreetype .value)),
+				]
 			list.append(res)
 		self.list = list
 		self.l.setList(list)
@@ -378,7 +378,7 @@ class MSNWeatherPluginEntryConfigScreen2(MenuList):
 
 class MSNWeatherPluginSearch(Screen):
 	if skinwidth == 1280:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginSearch" position="center,center" size="550,400">
 			<widget name="entrylist" position="0,60" size="550,200" scrollbarMode="showOnDemand"/>
 			<widget render="Label" source="key_red" position="0,10" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
@@ -389,7 +389,7 @@ class MSNWeatherPluginSearch(Screen):
 			<ePixmap position="420,10" zPosition="4" size="140,40" pixmap="buttons/blue.png" transparent="1" alphatest="on" />
 		</screen>"""
 	else:
-	   skin = """
+		skin = """
 		<screen name="MSNWeatherPluginSearch" position="center,center" size="811,534">
 			<widget name="entrylist" position="center,70" size="800,457" scrollbarMode="showOnDemand"/>
 			<widget render="Label" source="key_red" position="5,5" size="200,60" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1"/>
@@ -434,18 +434,18 @@ class MSNWeatherPluginSearchResultList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		if skinwidth == 1280:
-		      self.l.setFont(0, gFont("Regular", 20))
-		      self.l.setFont(1, gFont("Regular", 18))
+			self.l.setFont(0, gFont("Regular", 20))
+			self.l.setFont(1, gFont("Regular", 18))
 		else:
-		      self.l.setFont(0, gFont("Regular", 28))
-		      self.l.setFont(1, gFont("Regular", 26))
+			self.l.setFont(0, gFont("Regular", 28))
+			self.l.setFont(1, gFont("Regular", 26))
 
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
 		if skinwidth == 1280:
-		     instance.setItemHeight(44)
+			instance.setItemHeight(44)
 		else:
-		     instance.setItemHeight(55)
+			instance.setItemHeight(55)
 
 	def getCurrentIndex(self):
 		return self.instance.getCurrentIndex()
@@ -462,17 +462,17 @@ class MSNWeatherPluginSearchResultList(MenuList):
 				searchresult = childs.attrib.get("weatherfullname").encode("utf-8", 'ignore')
 				weatherlocationcode = childs.attrib.get("weatherlocationcode").encode("utf-8", 'ignore')
 				if skinwidth == 1280:
-				   res = [
-					(weatherlocationcode, searchlocation),
-					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 500, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchlocation),
-					(eListboxPythonMultiContent.TYPE_TEXT, 5, 22, 500, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchresult),
-				   ]
+					res = [
+						(weatherlocationcode, searchlocation),
+						(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 500, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchlocation),
+						(eListboxPythonMultiContent.TYPE_TEXT, 5, 22, 500, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchresult),
+					]
 				else:
-				   res = [
-					(weatherlocationcode, searchlocation),
-					(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 500, 30, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchlocation),
-					(eListboxPythonMultiContent.TYPE_TEXT, 5, 27, 500, 26, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchresult),
-				   ]
+					res = [
+						(weatherlocationcode, searchlocation),
+						(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 500, 30, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchlocation),
+						(eListboxPythonMultiContent.TYPE_TEXT, 5, 27, 500, 26, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, searchresult),
+					]
 				list.append(res)
 		self.list = list
 		self.l.setList(list)
